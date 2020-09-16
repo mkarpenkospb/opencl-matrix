@@ -3,7 +3,6 @@ cmake_minimum_required(VERSION 3.1)
 project(libutils)
 
 set(HEADERS
-        libutils/fast_random.h
         libutils/string_utils.h
         libutils/timer.h
         )
