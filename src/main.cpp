@@ -46,7 +46,9 @@ void testMultiplication(cl::Device& device) {
 void transitiveReductionSlow(cl::Device& device,
         const std::vector<uchar>& adj_matrix, std::vector<uchar>& result, size_t v) {
     std::vector<uchar> tmp(v * v);
+    result.assign(adj_matrix.begin(), adj_matrix.end());
     // задача -- возвести в степень не менее v, дальше не повлияет на результат
+    // тут начинвется с квадрата
     while (v) {
         matrix_mult(device, result, result, tmp, v, v, v);
         result.swap(tmp);
